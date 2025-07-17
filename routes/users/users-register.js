@@ -27,7 +27,6 @@ router.post('/', async (req, res) => {
       return res.status(409).json({ error: 'Username hoặc Email đã tồn tại.' });
     }
 
-
     //hashing
     console.log('Hashing password...');
     const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -36,12 +35,14 @@ router.post('/', async (req, res) => {
     //save user
     const newUser = new UserModel(
       {
-        id: newUserID,
+        userid: newUserID,
         username,
         password: hashedPassword,
         email
       }
     );
+
+    console.log(`this is the detail being processed:${newUser}`);
 
     await newUser.save();
 

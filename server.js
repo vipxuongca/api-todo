@@ -31,7 +31,6 @@ connectDB();
 // use json for the whole application, this automatically parse JSON into objects
 app.use(bodyParser.json()); 
 
-
 // Routes listing
 //users
 app.use('/api/users/me', userMeRoutes);
