@@ -7,6 +7,15 @@ import validator from 'validator';
 const router = express.Router();
 const saltRounds = 10;
 
+/*
+Expected payload
+{
+    "username":"megan",
+    "password":"123456",
+    "email":"megan@gmail.com"
+}
+*/
+
 // POST /api/users/register
 router.post('/', async (req, res) => {
 

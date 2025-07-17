@@ -4,6 +4,13 @@ import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 
+/*
+Expected payload:
+{
+  "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjYThiNTliLThjY2UtNDc2ZC1iYWFmLWQ3YzZmOGQ4ODg5YSIsImlhdCI6MTc1Mjc0NjkxMCwiZXhwIjoxNzUzMzUxNzEwfQ.ekZ6LYzNIMucWwYyRklYo1tE9hygv8_v--acFBQjRfE"
+}
+*/
+
 //POST /api/users/refresh
 router.post('/', async (req, res) => {
   //the body of the refresh message contains the token

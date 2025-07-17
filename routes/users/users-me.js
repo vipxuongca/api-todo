@@ -3,7 +3,11 @@ import User from '../../models/users-model.js';
 import { verifyToken } from '../../controllers/auth/jwt-verify.js';
 
 const router = express.Router();
+/*
+No payload
+*/
 
+// GET /api/users/me
 router.get('/', verifyToken, async (req, res) => {
   try {
     const user = await User.findOne({ userid: req.user.id }, 'userid username email');
