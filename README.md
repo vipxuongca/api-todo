@@ -9,6 +9,7 @@ USER SCHEMA
 
 TO-DO SCHEMA
 - objectid
+- userid
 - Title
 - Slug
 - Description
