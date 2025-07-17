@@ -20,7 +20,7 @@ import userRefreshRoute from './routes/users/users-refresh.js';
 // routing for todo
 import todoGetRoutes from './routes/todos/todos-get.js';
 import todoCreateRoutes from './routes/todos/todos-create.js';
-import todoPutRoutes from './routes/todos/todos-put.js';
+import todoUpdateRoutes from './routes/todos/todos-update.js';
 import todoDeleteRoutes from './routes/todos/todos-delete.js';
 
 //initialisation
@@ -43,7 +43,7 @@ app.use('/api/users/refresh', userRefreshRoute);
 //todos
 app.use('/api/todos/', todoGetRoutes);
 app.use('/api/todos/create', todoCreateRoutes);
-app.use('/api/todos/update', todoPutRoutes);
+app.use('/api/todos/update', todoUpdateRoutes);
 app.use('/api/todos/delete', todoDeleteRoutes);
 
 //Routes and Semantic handling
