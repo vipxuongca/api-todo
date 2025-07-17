@@ -1,8 +1,10 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
+// import { handleRefreshToken } from '../../controllers/auth/refresh';
 
 const router = express.Router();
 
+//POST /api/users/refresh
 router.post('/', async (req, res) => {
   //the body of the refresh message contains the token
   const { refreshToken } = req.body;
