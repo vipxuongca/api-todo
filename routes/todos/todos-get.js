@@ -3,7 +3,9 @@ import { verifyToken } from '../../controllers/auth/jwt-verify.js';
 import TodoList from '../../models/todo-model.js';
 
 const router = express.Router();
-
+/*
+No payload
+*/
 // GET /api/todos?page=1
 router.get('/', verifyToken, async (req, res) => {
   const page = parseInt(req.query.page) || 1;//here is the query param
