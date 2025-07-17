@@ -14,6 +14,7 @@ import connectDB from './config/db.js'
 import userMeRoutes from './routes/users/users-me.js';
 import userRegisterRoutes from './routes/users/users-register.js';
 import userLoginRoutes from './routes/users/users-login.js';
+import userLogoutRoutes from './routes/users/users-logout.js';
 import userRefreshRoute from './routes/users/users-refresh.js';
 
 // routing for todo
@@ -36,6 +37,7 @@ app.use(bodyParser.json());
 app.use('/api/users/me', userMeRoutes);
 app.use('/api/users/register', userRegisterRoutes);
 app.use('/api/users/login', userLoginRoutes);
+app.use('/api/users/logout', userLogoutRoutes);
 app.use('/api/users/refresh', userRefreshRoute);
 
 //todos
