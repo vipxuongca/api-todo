@@ -1,12 +1,14 @@
 import express from 'express';
 import User from '../../models/users-model.js';
+import { verifyToken } from '../../controllers/auth/jwt-verify.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', verifyToken, async (req, res) => {
   try {
-    const users = await User.find({}, 'id username email'); // projection
-    res.json(users);
+    const user = await User.findOne({ userid: req.user.id }, 'userid username email');
+    res.json(user);
+
   } catch (err) {
     res.status(500).send(err.message);
   }
