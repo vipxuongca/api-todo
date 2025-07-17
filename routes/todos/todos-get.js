@@ -6,7 +6,7 @@ const router = express.Router();
 
 // GET /api/todos?page=1
 router.get('/', verifyToken, async (req, res) => {
-  const page = parseInt(req.query.page) || 1;
+  const page = parseInt(req.query.page) || 1;//here is the query param
   const limit = 10;
   const skip = (page - 1) * limit;
 
